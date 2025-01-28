@@ -2,7 +2,7 @@ import React from "react";
 
 const FoodCard = ({ name, image, restaurant, logo, rating, status }) => {
   return (
-    <div className="border p-4 rounded-lg shadow-md">
+    <div className="border p-4 rounded-lg shadow-md w-56">
       <img src={image} alt={name} className="w-full h-48 object-cover rounded-lg" />
       <h2 className="text-xl font-bold mt-2">{name}</h2>
       <div className="flex items-center mt-2">

@@ -26,7 +26,29 @@ export default function Header() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submitting food data:", formData);
-    localStorage.setItem("foodData", JSON.stringify(formData));
+  
+    // Fetch existing data from localStorage
+    const storedData = localStorage.getItem("foodData");
+    let existingData = [];
+  
+    try {
+      // Attempt to parse the stored data
+      existingData = JSON.parse(storedData);
+      // Ensure existingData is an array
+      if (!Array.isArray(existingData)) {
+        existingData = []; // Reset to an empty array if it's not an array
+      }
+    } catch (error) {
+      console.error("Error parsing stored data:", error);
+      existingData = []; // Reset to an empty array if parsing fails
+    }
+  
+    // Add the new food item to the array
+    const updatedData = [...existingData, formData];
+  
+    // Save the updated array back to localStorage
+    localStorage.setItem("foodData", JSON.stringify(updatedData));
+  
     toast.success("Food data saved successfully!");
     setFormData({
       name: "",
@@ -36,7 +58,7 @@ export default function Header() {
       logo: "",
       status: "open",
     });
-
+  
     // Close the modal after submission
     document.getElementById("my_modal_1").close();
   };

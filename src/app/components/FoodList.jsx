@@ -15,7 +15,10 @@ export default function FoodList() {
   }, []);
 
   return (
-    <div className="mx-32 grid grid-cols-3 gap-8">
+    <div className="mx-32 flex flex-col gap-2 justify-center items-center py-16">
+      <h2 className="font-bold text-2xl my-4">Featured Restaurants</h2>
+      <div className="grid grid-cols-3 gap-8  justify-center items-center">
+
       {foodItems.length > 0 ? (
         foodItems.map((item, index) => (
           <FoodCard
@@ -31,6 +34,8 @@ export default function FoodList() {
       ) : (
         <p>No food items found. Add some food to see them here!</p>
       )}
+            </div>
+
     </div>
   );
 }

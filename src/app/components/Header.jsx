@@ -129,7 +129,7 @@ export default function Header() {
                 required
               />
               <div className="dropdown dropdown-bottom">
-                <div tabIndex={0} role="button" className="btn m-1">
+                <div tabIndex={0} role="button" className="border p-3 rounded-lg bg-white">
                   Restaurant Status: {formData.status}
                 </div>
                 <ul

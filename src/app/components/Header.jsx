@@ -58,6 +58,8 @@ export default function Header() {
       logo: "",
       status: "open",
     });
+
+    location.reload();
   
     // Close the modal after submission
     document.getElementById("my_modal_1").close();

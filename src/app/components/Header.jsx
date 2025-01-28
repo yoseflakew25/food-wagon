@@ -68,7 +68,7 @@ export default function Header() {
   return (
     <>
       <ToastContainer />
-      <nav className="flex flex-wrap items-center py-4 pr-32 pl-56 font-bold bg-white shadow-md max-md:px-5">
+      <nav className="sticky top-0 flex flex-wrap items-center py-4 pr-32 pl-56 font-bold bg-white shadow-md max-md:px-5 z-50">
         <div className="flex grow shrink gap-3 items-center self-stretch my-auto text-3xl tracking-tighter leading-tight text-orange-500 w-[167px]">
           <div className="self-stretch my-auto">
             Food<span className="text-yellow-500">Wagen</span>
